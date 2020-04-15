@@ -29,6 +29,8 @@
    - script added intp package.json file ;
    - run : npm run dev and check localhost:3000 in the browser ;
 
-
+    - git error: [ Solved by running this command : rm .git/index.lock ; Then : git init ; git add ./git commit -m ""] --->
+    (Git: fatal: Unable to create '.git/index.lock': File exists.)
+    - 
 
 ```
