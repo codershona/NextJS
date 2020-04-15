@@ -25,6 +25,7 @@
 
 ```
    - At first run : npm init ;
+   - npm install --save next react react-dom / npm install next react react-dom;
    - 
 
 
