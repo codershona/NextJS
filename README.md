@@ -1,2 +1,4 @@
 # NextJS
-NextJS
+### NextJS APP (Beyond create-react-app)
+
+
