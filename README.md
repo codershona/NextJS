@@ -4,9 +4,11 @@
 
 * NOTES :
 
+###  Understanding Server Side Rendering :
+
 ```
    - Next.js is a minimalistic framework for server-rendered React applications ;
-   * Understanding Server Side Rendering : How SSR Works?
+   * How SSR Works?
    ANS: Server ----------------> React App Code
                  (Fetch & Render React app)
                    |   |
@@ -19,4 +21,11 @@
      
 ```
 
+### Setting Up my Project :
 
+```
+   - At first run : npm init ;
+   - 
+
+
+```
