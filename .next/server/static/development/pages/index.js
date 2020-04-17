@@ -1806,9 +1806,19 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 class IndexPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
-  static async getInitialProps(context) {
+  // static async getInitialProps(context) {
+  static getInitialProps(context) {
     console.log(context);
-    return {};
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({
+          appName: 'Super App'
+        });
+      }, 1000);
+    }); // promise.then();
+    // return{appName: 'Super App'};
+
+    return promise;
   }
 
   render() {
@@ -1816,36 +1826,36 @@ class IndexPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17,
+        lineNumber: 28,
         columnNumber: 8
       }
     }, __jsx("h1", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18,
+        lineNumber: 29,
         columnNumber: 6
       }
-    }, "The Main Page"), __jsx("p", {
+    }, "The Main Page of ", this.props.appName), __jsx("p", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19,
+        lineNumber: 30,
         columnNumber: 6
       }
-    }, "Go To", "", __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    }, "Go To  ", "", __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
       href: "/auth",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20,
-        columnNumber: 6
+        lineNumber: 31,
+        columnNumber: 8
       }
     }, __jsx("a", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21,
+        lineNumber: 32,
         columnNumber: 9
       }
     }, "Auth"))), __jsx("button", {
@@ -1853,7 +1863,7 @@ class IndexPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24,
+        lineNumber: 35,
         columnNumber: 6
       }
     }, " Go To Auth"));

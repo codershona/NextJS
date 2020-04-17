@@ -4,9 +4,20 @@ import Router from 'next/router';
 
 
 class IndexPage extends Component {
-	static async getInitialProps(context) {
+	// static async getInitialProps(context) {
+		static getInitialProps(context) {
 		console.log(context);
-		return{};
+		  const promise = new Promise((resolve, reject) => {
+		  	 setTimeout(() => {
+		  	 	resolve({appName: 'Super App'});
+                
+		  	 }, 1000);
+
+		  });
+		  // promise.then();
+
+		// return{appName: 'Super App'};
+		return promise;
 
 	}
 
@@ -15,9 +26,9 @@ class IndexPage extends Component {
     	return (
 
     		 <div>
-     <h1>The Main Page</h1>
-     <p>Go To{""}
-     <Link href="/auth">
+     <h1>The Main Page of {this.props.appName}</h1>
+     <p>Go To  {""} 
+       <Link href="/auth">
         <a>Auth</a>
         </Link>
         </p>
