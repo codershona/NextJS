@@ -93,6 +93,48 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./components/User.js":
+/*!****************************!*\
+  !*** ./components/User.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/home/falguni/Documents/NextJS/components/User.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+const user = props => __jsx("div", {
+  __self: undefined,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 5,
+    columnNumber: 5
+  }
+}, __jsx("h1", {
+  __self: undefined,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 6,
+    columnNumber: 7
+  }
+}, props.name), __jsx("p", {
+  __self: undefined,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 7,
+    columnNumber: 8
+  }
+}, " AGE: ", props.age));
+
+/* harmony default export */ __webpack_exports__["default"] = (user);
+
+/***/ }),
+
 /***/ "./pages/auth/index.js":
 /*!*****************************!*\
   !*** ./pages/auth/index.js ***!
@@ -104,8 +146,10 @@ module.exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_User__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/User */ "./components/User.js");
 var _jsxFileName = "/home/falguni/Documents/NextJS/pages/auth/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 const authIndexPage = () => __jsx("div", {
@@ -120,9 +164,18 @@ const authIndexPage = () => __jsx("div", {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 6,
-    columnNumber: 6
+    columnNumber: 8
   }
-}, "The Auth Index Main Page"));
+}, "The Auth Index Main Page"), __jsx(_components_User__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  name: "Lissa",
+  age: 24,
+  __self: undefined,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 7,
+    columnNumber: 8
+  }
+}));
 
 /* harmony default export */ __webpack_exports__["default"] = (authIndexPage);
 
