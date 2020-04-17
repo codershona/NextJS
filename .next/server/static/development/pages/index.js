@@ -1805,53 +1805,62 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const indexPage = () => __jsx("div", {
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 7,
-    columnNumber: 6
+class IndexPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  static async getInitialProps(context) {
+    console.log(context);
   }
-}, __jsx("h1", {
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 8,
-    columnNumber: 6
-  }
-}, "The Main Page"), __jsx("p", {
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 9,
-    columnNumber: 6
-  }
-}, "Go To ", __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-  href: "/auth",
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 9,
-    columnNumber: 15
-  }
-}, __jsx("a", {
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 9,
-    columnNumber: 34
-  }
-}, "Auth"))), __jsx("button", {
-  onClick: () => next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push('/auth'),
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 10,
-    columnNumber: 6
-  }
-}, " Go To Auth"));
 
-/* harmony default export */ __webpack_exports__["default"] = (indexPage);
+  render() {
+    return __jsx("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17,
+        columnNumber: 8
+      }
+    }, __jsx("h1", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18,
+        columnNumber: 6
+      }
+    }, "The Main Page"), __jsx("p", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19,
+        columnNumber: 6
+      }
+    }, "Go To", "", __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      href: "/auth",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20,
+        columnNumber: 6
+      }
+    }, __jsx("a", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21,
+        columnNumber: 9
+      }
+    }, "Auth"))), __jsx("button", {
+      onClick: () => next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push('/auth'),
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24,
+        columnNumber: 6
+      }
+    }, " Go To Auth"));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (IndexPage);
 
 /***/ }),
 

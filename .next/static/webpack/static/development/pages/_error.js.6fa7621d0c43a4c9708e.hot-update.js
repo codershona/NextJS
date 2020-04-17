@@ -120,7 +120,7 @@ var errorPage = function errorPage() {
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!*********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F_error&absolutePagePath=%2Fhome%2Ffalguni%2FDocuments%2FNextJS%2Fpages%2F_error.js ***!
   \*********************************************************************************************************************************/
@@ -133,4 +133,4 @@ module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F_error
 /***/ })
 
 })
-//# sourceMappingURL=_error.js.f5e87818cc686f6b912d.hot-update.js.map
+//# sourceMappingURL=_error.js.6fa7621d0c43a4c9708e.hot-update.js.map
