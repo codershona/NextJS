@@ -93,53 +93,63 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "../next-server/lib/router-context":
-/*!**************************************************************!*\
-  !*** external "next/dist/next-server/lib/router-context.js" ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("next/dist/next-server/lib/router-context.js");
-
-/***/ }),
-
-/***/ "../next-server/lib/utils":
-/*!*****************************************************!*\
-  !*** external "next/dist/next-server/lib/utils.js" ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("next/dist/next-server/lib/utils.js");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/interopRequireDefault.js ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    "default": obj
-  };
-}
-
-module.exports = _interopRequireDefault;
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/interopRequireWildcard.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/interopRequireWildcard.js ***!
-  \***********************************************************************/
-/*! no static exports found */
+/***/ "/jkW":
 /***/ (function(module, exports, __webpack_require__) {
 
-var _typeof = __webpack_require__(/*! ../helpers/typeof */ "./node_modules/@babel/runtime/helpers/typeof.js");
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+}); // Identify /[param]/ in route string
+
+const TEST_ROUTE = /\/\[[^/]+?\](?=\/|$)/;
+
+function isDynamicRoute(route) {
+  return TEST_ROUTE.test(route);
+}
+
+exports.isDynamicRoute = isDynamicRoute;
+
+/***/ }),
+
+/***/ "0Bsm":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__("TqRt");
+
+exports.__esModule = true;
+exports.default = withRouter;
+
+var _react = _interopRequireDefault(__webpack_require__("cDcd"));
+
+var _router = __webpack_require__("nOHt");
+
+function withRouter(ComposedComponent) {
+  function WithRouterWrapper(props) {
+    return _react.default.createElement(ComposedComponent, Object.assign({
+      router: (0, _router.useRouter)()
+    }, props));
+  }
+
+  WithRouterWrapper.getInitialProps = ComposedComponent.getInitialProps // This is needed to allow checking for custom getInitialProps in _app
+  ;
+  WithRouterWrapper.origGetInitialProps = ComposedComponent.origGetInitialProps;
+
+  if (false) { var name; }
+
+  return WithRouterWrapper;
+}
+
+/***/ }),
+
+/***/ "284h":
+/***/ (function(module, exports, __webpack_require__) {
+
+var _typeof = __webpack_require__("cDf5");
 
 function _getRequireWildcardCache() {
   if (typeof WeakMap !== "function") return null;
@@ -197,11 +207,145 @@ module.exports = _interopRequireWildcard;
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime/helpers/typeof.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/typeof.js ***!
-  \*******************************************************/
-/*! no static exports found */
+/***/ 3:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("RNiq");
+
+
+/***/ }),
+
+/***/ "4Q3z":
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
+
+/***/ }),
+
+/***/ "Osoz":
+/***/ (function(module, exports) {
+
+module.exports = require("next/dist/next-server/lib/router-context.js");
+
+/***/ }),
+
+/***/ "RNiq":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("YFqc");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("4Q3z");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+class IndexPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  // static async getInitialProps(context) {
+  static getInitialProps(context) {
+    // console.log(context);
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({
+          appName: 'Super App'
+        });
+      }, 1000);
+    }); // promise.then();
+    // return{appName: 'Super App'};
+
+    return promise;
+  }
+
+  render() {
+    return __jsx("div", null, __jsx("h1", null, "The Main Page of ", this.props.appName), __jsx("p", null, "Go To  ", "", __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      href: "/auth"
+    }, __jsx("a", null, "Auth"))), __jsx("button", {
+      onClick: () => next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push('/auth')
+    }, " Go To Auth"));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (IndexPage);
+
+/***/ }),
+
+/***/ "TqRt":
+/***/ (function(module, exports) {
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+module.exports = _interopRequireDefault;
+
+/***/ }),
+
+/***/ "YFqc":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("cTJO")
+
+
+/***/ }),
+
+/***/ "YTqd":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function getRouteRegex(normalizedRoute) {
+  // Escape all characters that could be considered RegEx
+  const escapedRoute = (normalizedRoute.replace(/\/$/, '') || '/').replace(/[|\\{}()[\]^$+*?.-]/g, '\\$&');
+  const groups = {};
+  let groupIndex = 1;
+  const parameterizedRoute = escapedRoute.replace(/\/\\\[([^/]+?)\\\](?=\/|$)/g, (_, $1) => {
+    const isCatchAll = /^(\\\.){3}/.test($1);
+    groups[$1 // Un-escape key
+    .replace(/\\([|\\{}()[\]^$+*?.-])/g, '$1').replace(/^\.{3}/, '') // eslint-disable-next-line no-sequences
+    ] = {
+      pos: groupIndex++,
+      repeat: isCatchAll
+    };
+    return isCatchAll ? '/(.+?)' : '/([^/]+?)';
+  });
+  return {
+    re: new RegExp('^' + parameterizedRoute + '(?:/)?$', 'i'),
+    groups
+  };
+}
+
+exports.getRouteRegex = getRouteRegex;
+
+/***/ }),
+
+/***/ "bzos":
+/***/ (function(module, exports) {
+
+module.exports = require("url");
+
+/***/ }),
+
+/***/ "cDcd":
+/***/ (function(module, exports) {
+
+module.exports = require("react");
+
+/***/ }),
+
+/***/ "cDf5":
 /***/ (function(module, exports) {
 
 function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
@@ -224,32 +368,28 @@ module.exports = _typeof;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/client/link.js":
-/*!***********************************************!*\
-  !*** ./node_modules/next/dist/client/link.js ***!
-  \***********************************************/
-/*! no static exports found */
+/***/ "cTJO":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+var _interopRequireDefault = __webpack_require__("TqRt");
 
-var _interopRequireWildcard = __webpack_require__(/*! @babel/runtime/helpers/interopRequireWildcard */ "./node_modules/@babel/runtime/helpers/interopRequireWildcard.js");
+var _interopRequireWildcard = __webpack_require__("284h");
 
 exports.__esModule = true;
 exports.default = void 0;
 
-var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
+var _react = _interopRequireWildcard(__webpack_require__("cDcd"));
 
-var _url = __webpack_require__(/*! url */ "url");
+var _url = __webpack_require__("bzos");
 
-var _utils = __webpack_require__(/*! ../next-server/lib/utils */ "../next-server/lib/utils");
+var _utils = __webpack_require__("kYf9");
 
-var _router = _interopRequireDefault(__webpack_require__(/*! ./router */ "./node_modules/next/dist/client/router.js"));
+var _router = _interopRequireDefault(__webpack_require__("nOHt"));
 
-var _router2 = __webpack_require__(/*! ../next-server/lib/router/router */ "./node_modules/next/dist/next-server/lib/router/router.js");
+var _router2 = __webpack_require__("elyg");
 
 function isLocal(href) {
   var url = (0, _url.parse)(href, false, true);
@@ -396,11 +536,7 @@ class Link extends _react.Component {
       });
     };
 
-    if (true) {
-      if (props.prefetch) {
-        console.warn('Next.js auto-prefetches automatically based on viewport. The prefetch attribute is no longer needed. More: https://err.sh/zeit/next.js/prefetch-true-deprecated');
-      }
-    }
+    if (false) {}
 
     this.p = props.prefetch !== false;
   }
@@ -449,10 +585,7 @@ class Link extends _react.Component {
     0], paths[
     /* asPath */
     1], options).catch(err => {
-      if (true) {
-        // rethrow to show invalid URL errors
-        throw err;
-      }
+      if (false) {}
     });
 
     prefetched[paths.join( // Join on an invalid URI character
@@ -519,246 +652,14 @@ class Link extends _react.Component {
 
 }
 
-if (true) {
-  var warn = (0, _utils.execOnce)(console.error); // This module gets removed by webpack.IgnorePlugin
-
-  var PropTypes = __webpack_require__(/*! prop-types */ "prop-types");
-
-  var exact = __webpack_require__(/*! prop-types-exact */ "prop-types-exact"); // @ts-ignore the property is supported, when declaring it on the class it outputs an extra bit of code which is not needed.
-
-
-  Link.propTypes = exact({
-    href: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
-    as: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-    prefetch: PropTypes.bool,
-    replace: PropTypes.bool,
-    shallow: PropTypes.bool,
-    passHref: PropTypes.bool,
-    scroll: PropTypes.bool,
-    children: PropTypes.oneOfType([PropTypes.element, (props, propName) => {
-      var value = props[propName];
-
-      if (typeof value === 'string') {
-        warn("Warning: You're using a string directly inside <Link>. This usage has been deprecated. Please add an <a> tag as child of <Link>");
-      }
-
-      return null;
-    }]).isRequired
-  });
-}
+if (false) { var exact, PropTypes, warn; }
 
 var _default = Link;
 exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/client/router.js":
-/*!*************************************************!*\
-  !*** ./node_modules/next/dist/client/router.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireWildcard = __webpack_require__(/*! @babel/runtime/helpers/interopRequireWildcard */ "./node_modules/@babel/runtime/helpers/interopRequireWildcard.js");
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-
-exports.__esModule = true;
-exports.useRouter = useRouter;
-exports.makePublicRouterInstance = makePublicRouterInstance;
-exports.createRouter = exports.withRouter = exports.default = void 0;
-
-var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
-
-var _router2 = _interopRequireWildcard(__webpack_require__(/*! ../next-server/lib/router/router */ "./node_modules/next/dist/next-server/lib/router/router.js"));
-
-exports.Router = _router2.default;
-exports.NextRouter = _router2.NextRouter;
-
-var _routerContext = __webpack_require__(/*! ../next-server/lib/router-context */ "../next-server/lib/router-context");
-
-var _withRouter = _interopRequireDefault(__webpack_require__(/*! ./with-router */ "./node_modules/next/dist/client/with-router.js"));
-
-exports.withRouter = _withRouter.default;
-/* global window */
-
-var singletonRouter = {
-  router: null,
-  // holds the actual router instance
-  readyCallbacks: [],
-
-  ready(cb) {
-    if (this.router) return cb();
-
-    if (false) {}
-  }
-
-}; // Create public properties and methods of the router in the singletonRouter
-
-var urlPropertyFields = ['pathname', 'route', 'query', 'asPath', 'components', 'isFallback', 'basePath'];
-var routerEvents = ['routeChangeStart', 'beforeHistoryChange', 'routeChangeComplete', 'routeChangeError', 'hashChangeStart', 'hashChangeComplete'];
-var coreMethodFields = ['push', 'replace', 'reload', 'back', 'prefetch', 'beforePopState']; // Events is a static property on the router, the router doesn't have to be initialized to use it
-
-Object.defineProperty(singletonRouter, 'events', {
-  get() {
-    return _router2.default.events;
-  }
-
-});
-urlPropertyFields.forEach(field => {
-  // Here we need to use Object.defineProperty because, we need to return
-  // the property assigned to the actual router
-  // The value might get changed as we change routes and this is the
-  // proper way to access it
-  Object.defineProperty(singletonRouter, field, {
-    get() {
-      var router = getRouter();
-      return router[field];
-    }
-
-  });
-});
-coreMethodFields.forEach(field => {
-  // We don't really know the types here, so we add them later instead
-  ;
-
-  singletonRouter[field] = function () {
-    var router = getRouter();
-    return router[field](...arguments);
-  };
-});
-routerEvents.forEach(event => {
-  singletonRouter.ready(() => {
-    _router2.default.events.on(event, function () {
-      var eventField = "on" + event.charAt(0).toUpperCase() + event.substring(1);
-      var _singletonRouter = singletonRouter;
-
-      if (_singletonRouter[eventField]) {
-        try {
-          _singletonRouter[eventField](...arguments);
-        } catch (err) {
-          // tslint:disable-next-line:no-console
-          console.error("Error when running the Router event: " + eventField); // tslint:disable-next-line:no-console
-
-          console.error(err.message + "\n" + err.stack);
-        }
-      }
-    });
-  });
-});
-
-function getRouter() {
-  if (!singletonRouter.router) {
-    var message = 'No router instance found.\n' + 'You should only use "next/router" inside the client side of your app.\n';
-    throw new Error(message);
-  }
-
-  return singletonRouter.router;
-} // Export the singletonRouter and this is the public API.
-
-
-var _default = singletonRouter; // Reexport the withRoute HOC
-
-exports.default = _default;
-
-function useRouter() {
-  return _react.default.useContext(_routerContext.RouterContext);
-} // INTERNAL APIS
-// -------------
-// (do not use following exports inside the app)
-// Create a router and assign it as the singleton instance.
-// This is used in client side when we are initilizing the app.
-// This should **not** use inside the server.
-
-
-var createRouter = function createRouter() {
-  for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  singletonRouter.router = new _router2.default(...args);
-  singletonRouter.readyCallbacks.forEach(cb => cb());
-  singletonRouter.readyCallbacks = [];
-  return singletonRouter.router;
-}; // This function is used to create the `withRouter` router instance
-
-
-exports.createRouter = createRouter;
-
-function makePublicRouterInstance(router) {
-  var _router = router;
-  var instance = {};
-
-  for (var property of urlPropertyFields) {
-    if (typeof _router[property] === 'object') {
-      instance[property] = Object.assign({}, _router[property]); // makes sure query is not stateful
-
-      continue;
-    }
-
-    instance[property] = _router[property];
-  } // Events is a static property on the router, the router doesn't have to be initialized to use it
-
-
-  instance.events = _router2.default.events;
-  coreMethodFields.forEach(field => {
-    instance[field] = function () {
-      return _router[field](...arguments);
-    };
-  });
-  return instance;
-}
-
-/***/ }),
-
-/***/ "./node_modules/next/dist/client/with-router.js":
-/*!******************************************************!*\
-  !*** ./node_modules/next/dist/client/with-router.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-
-exports.__esModule = true;
-exports.default = withRouter;
-
-var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
-
-var _router = __webpack_require__(/*! ./router */ "./node_modules/next/dist/client/router.js");
-
-function withRouter(ComposedComponent) {
-  function WithRouterWrapper(props) {
-    return _react.default.createElement(ComposedComponent, Object.assign({
-      router: (0, _router.useRouter)()
-    }, props));
-  }
-
-  WithRouterWrapper.getInitialProps = ComposedComponent.getInitialProps // This is needed to allow checking for custom getInitialProps in _app
-  ;
-  WithRouterWrapper.origGetInitialProps = ComposedComponent.origGetInitialProps;
-
-  if (true) {
-    var name = ComposedComponent.displayName || ComposedComponent.name || 'Unknown';
-    WithRouterWrapper.displayName = "withRouter(" + name + ")";
-  }
-
-  return WithRouterWrapper;
-}
-
-/***/ }),
-
-/***/ "./node_modules/next/dist/next-server/lib/mitt.js":
-/*!********************************************************!*\
-  !*** ./node_modules/next/dist/next-server/lib/mitt.js ***!
-  \********************************************************/
-/*! no static exports found */
+/***/ "dZ6Y":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -809,11 +710,7 @@ exports.default = mitt;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/next-server/lib/router/router.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/next/dist/next-server/lib/router/router.js ***!
-  \*****************************************************************/
-/*! no static exports found */
+/***/ "elyg":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -829,17 +726,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-const url_1 = __webpack_require__(/*! url */ "url");
+const url_1 = __webpack_require__("bzos");
 
-const mitt_1 = __importDefault(__webpack_require__(/*! ../mitt */ "./node_modules/next/dist/next-server/lib/mitt.js"));
+const mitt_1 = __importDefault(__webpack_require__("dZ6Y"));
 
-const utils_1 = __webpack_require__(/*! ../utils */ "./node_modules/next/dist/next-server/lib/utils.js");
+const utils_1 = __webpack_require__("g/15");
 
-const is_dynamic_1 = __webpack_require__(/*! ./utils/is-dynamic */ "./node_modules/next/dist/next-server/lib/router/utils/is-dynamic.js");
+const is_dynamic_1 = __webpack_require__("/jkW");
 
-const route_matcher_1 = __webpack_require__(/*! ./utils/route-matcher */ "./node_modules/next/dist/next-server/lib/router/utils/route-matcher.js");
+const route_matcher_1 = __webpack_require__("gguc");
 
-const route_regex_1 = __webpack_require__(/*! ./utils/route-regex */ "./node_modules/next/dist/next-server/lib/router/utils/route-regex.js");
+const route_regex_1 = __webpack_require__("YTqd");
 
 const basePath =  false || '';
 
@@ -962,18 +859,14 @@ class Router {
         options
       } = e.state;
 
-      if (true) {
-        if (typeof url === 'undefined' || typeof as === 'undefined') {
-          console.warn('`popstate` event triggered but `event.state` did not have `url` or `as` https://err.sh/zeit/next.js/popstate-state-empty');
-        }
-      }
+      if (false) {}
 
       this.replace(url, as, options);
     };
 
     this._getStaticData = asPath => {
       const pathname = prepareRoute(url_1.parse(asPath).pathname);
-      return  false ? undefined : fetchNextData(pathname, null, this.isSsr, data => this.sdc[pathname] = data);
+      return  true && this.sdc[pathname] ? Promise.resolve(this.sdc[pathname]) : fetchNextData(pathname, null, this.isSsr, data => this.sdc[pathname] = data);
     };
 
     this._getServerData = asPath => {
@@ -1136,9 +1029,7 @@ class Router {
       } = url_1.parse(url, true);
 
       if (!pathname || protocol) {
-        if (true) {
-          throw new Error(`Invalid href passed to router: ${url} https://err.sh/zeit/next.js/invalid-href-passed`);
-        }
+        if (false) {}
 
         return resolve(false);
       } // If asked to change the current URL we should reload the current page
@@ -1168,9 +1059,7 @@ class Router {
           const missingParams = Object.keys(routeRegex.groups).filter(param => !query[param]);
 
           if (missingParams.length > 0) {
-            if (true) {
-              console.warn(`Mismatching \`as\` and \`href\` failed to manually provide ` + `the params: ${missingParams.join(', ')} in the \`href\`'s \`query\``);
-            }
+            if (false) {}
 
             return reject(new Error(`The provided \`as\` value (${asPathname}) is incompatible with the \`href\` value (${route}). ` + `Read more: https://err.sh/zeit/next.js/incompatible-href-as`));
           }
@@ -1194,10 +1083,7 @@ class Router {
         Router.events.emit('beforeHistoryChange', as);
         this.changeState(method, url, as, options);
 
-        if (true) {
-          const appComp = this.components['/_app'].Component;
-          window.next.isPrerendered = appComp.getInitialProps === appComp.origGetInitialProps && !routeInfo.Component.getInitialProps;
-        }
+        if (false) {}
 
         this.set(route, pathname, query, as, routeInfo);
 
@@ -1213,17 +1099,7 @@ class Router {
   }
 
   changeState(method, url, as, options = {}) {
-    if (true) {
-      if (typeof window.history === 'undefined') {
-        console.error(`Warning: window.history is not available.`);
-        return;
-      }
-
-      if (typeof window.history[method] === 'undefined') {
-        console.error(`Warning: window.history.${method} is not available`);
-        return;
-      }
-    }
+    if (false) {}
 
     if (method !== 'pushState' || utils_1.getURL() !== as) {
       window.history[method]({
@@ -1315,15 +1191,7 @@ class Router {
         __N_SSP
       } = routeInfo;
 
-      if (true) {
-        const {
-          isValidElementType
-        } = __webpack_require__(/*! react-is */ "react-is");
-
-        if (!isValidElementType(Component)) {
-          throw new Error(`The default export is not a React Component in page: "${pathname}"`);
-        }
-      }
+      if (false) {}
 
       return this._getData(() => __N_SSG ? this._getStaticData(as) : __N_SSP ? this._getServerData(as) : this.getInitialProps(Component, // we provide AppTree later so this needs to be `any`
       {
@@ -1421,17 +1289,13 @@ class Router {
       } = url_1.parse(url);
 
       if (!pathname || protocol) {
-        if (true) {
-          throw new Error(`Invalid href passed to router: ${url} https://err.sh/zeit/next.js/invalid-href-passed`);
-        }
+        if (false) {}
 
         return;
       } // Prefetch is not supported in development mode because it would trigger on-demand-entries
 
 
-      if (true) {
-        return;
-      }
+      if (false) {}
 
       const route = delBasePath(toRoute(pathname));
       Promise.all([this.pageLoader.prefetchData(url, delBasePath(asPath)), this.pageLoader[options.priority ? 'loadPage' : 'prefetch'](route)]).then(() => resolve(), reject);
@@ -1521,35 +1385,7 @@ Router.events = mitt_1.default();
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/next-server/lib/router/utils/is-dynamic.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/next/dist/next-server/lib/router/utils/is-dynamic.js ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-}); // Identify /[param]/ in route string
-
-const TEST_ROUTE = /\/\[[^/]+?\](?=\/|$)/;
-
-function isDynamicRoute(route) {
-  return TEST_ROUTE.test(route);
-}
-
-exports.isDynamicRoute = isDynamicRoute;
-
-/***/ }),
-
-/***/ "./node_modules/next/dist/next-server/lib/router/utils/route-matcher.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/next/dist/next-server/lib/router/utils/route-matcher.js ***!
-  \******************************************************************************/
-/*! no static exports found */
+/***/ "g/15":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1559,99 +1395,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-function getRouteMatcher(routeRegex) {
-  const {
-    re,
-    groups
-  } = routeRegex;
-  return pathname => {
-    const routeMatch = re.exec(pathname);
-
-    if (!routeMatch) {
-      return false;
-    }
-
-    const decode = param => {
-      try {
-        return decodeURIComponent(param);
-      } catch (_) {
-        const err = new Error('failed to decode param');
-        err.code = 'DECODE_FAILED';
-        throw err;
-      }
-    };
-
-    const params = {};
-    Object.keys(groups).forEach(slugName => {
-      const g = groups[slugName];
-      const m = routeMatch[g.pos];
-
-      if (m !== undefined) {
-        params[slugName] = ~m.indexOf('/') ? m.split('/').map(entry => decode(entry)) : g.repeat ? [decode(m)] : decode(m);
-      }
-    });
-    return params;
-  };
-}
-
-exports.getRouteMatcher = getRouteMatcher;
-
-/***/ }),
-
-/***/ "./node_modules/next/dist/next-server/lib/router/utils/route-regex.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/next/dist/next-server/lib/router/utils/route-regex.js ***!
-  \****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-function getRouteRegex(normalizedRoute) {
-  // Escape all characters that could be considered RegEx
-  const escapedRoute = (normalizedRoute.replace(/\/$/, '') || '/').replace(/[|\\{}()[\]^$+*?.-]/g, '\\$&');
-  const groups = {};
-  let groupIndex = 1;
-  const parameterizedRoute = escapedRoute.replace(/\/\\\[([^/]+?)\\\](?=\/|$)/g, (_, $1) => {
-    const isCatchAll = /^(\\\.){3}/.test($1);
-    groups[$1 // Un-escape key
-    .replace(/\\([|\\{}()[\]^$+*?.-])/g, '$1').replace(/^\.{3}/, '') // eslint-disable-next-line no-sequences
-    ] = {
-      pos: groupIndex++,
-      repeat: isCatchAll
-    };
-    return isCatchAll ? '/(.+?)' : '/([^/]+?)';
-  });
-  return {
-    re: new RegExp('^' + parameterizedRoute + '(?:/)?$', 'i'),
-    groups
-  };
-}
-
-exports.getRouteRegex = getRouteRegex;
-
-/***/ }),
-
-/***/ "./node_modules/next/dist/next-server/lib/utils.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/next/dist/next-server/lib/utils.js ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-const url_1 = __webpack_require__(/*! url */ "url");
+const url_1 = __webpack_require__("bzos");
 /**
  * Utils
  */
@@ -1708,12 +1452,7 @@ exports.isResSent = isResSent;
 async function loadGetInitialProps(App, ctx) {
   var _a;
 
-  if (true) {
-    if ((_a = App.prototype) === null || _a === void 0 ? void 0 : _a.getInitialProps) {
-      const message = `"${getDisplayName(App)}.getInitialProps()" is defined as an instance method - visit https://err.sh/zeit/next.js/get-initial-props-as-an-instance-method for more information.`;
-      throw new Error(message);
-    }
-  } // when called from _app `ctx` is nested in `ctx`
+  if (false) {} // when called from _app `ctx` is nested in `ctx`
 
 
   const res = ctx.res || ctx.ctx && ctx.ctx.res;
@@ -1740,11 +1479,7 @@ async function loadGetInitialProps(App, ctx) {
     throw new Error(message);
   }
 
-  if (true) {
-    if (Object.keys(props).length === 0 && !ctx.ctx) {
-      console.warn(`${getDisplayName(App)} returned an empty object from \`getInitialProps\`. This de-optimizes and prevents automatic static optimization. https://err.sh/zeit/next.js/empty-object-getInitialProps`);
-    }
-  }
+  if (false) {}
 
   return props;
 }
@@ -1753,15 +1488,7 @@ exports.loadGetInitialProps = loadGetInitialProps;
 exports.urlObjectKeys = ['auth', 'hash', 'host', 'hostname', 'href', 'path', 'pathname', 'port', 'protocol', 'query', 'search', 'slashes'];
 
 function formatWithValidation(url, options) {
-  if (true) {
-    if (url !== null && typeof url === 'object') {
-      Object.keys(url).forEach(key => {
-        if (exports.urlObjectKeys.indexOf(key) === -1) {
-          console.warn(`Unknown key passed via urlObject into url.format: ${key}`);
-        }
-      });
-    }
-  }
+  if (false) {}
 
   return url_1.format(url, options);
 }
@@ -1772,186 +1499,218 @@ exports.ST = exports.SP && typeof performance.mark === 'function' && typeof perf
 
 /***/ }),
 
-/***/ "./node_modules/next/link.js":
-/*!***********************************!*\
-  !*** ./node_modules/next/link.js ***!
-  \***********************************/
-/*! no static exports found */
+/***/ "gguc":
 /***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/next/dist/client/link.js")
-
-
-/***/ }),
-
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/home/falguni/Documents/NextJS/pages/index.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+function getRouteMatcher(routeRegex) {
+  const {
+    re,
+    groups
+  } = routeRegex;
+  return pathname => {
+    const routeMatch = re.exec(pathname);
 
-class IndexPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
-  // static async getInitialProps(context) {
-  static getInitialProps(context) {
-    // console.log(context);
-    const promise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve({
-          appName: 'Super App'
-        });
-      }, 1000);
-    }); // promise.then();
-    // return{appName: 'Super App'};
+    if (!routeMatch) {
+      return false;
+    }
 
-    return promise;
-  }
-
-  render() {
-    return __jsx("div", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 28,
-        columnNumber: 8
+    const decode = param => {
+      try {
+        return decodeURIComponent(param);
+      } catch (_) {
+        const err = new Error('failed to decode param');
+        err.code = 'DECODE_FAILED';
+        throw err;
       }
-    }, __jsx("h1", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 29,
-        columnNumber: 6
-      }
-    }, "The Main Page of ", this.props.appName), __jsx("p", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 30,
-        columnNumber: 6
-      }
-    }, "Go To  ", "", __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-      href: "/auth",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 31,
-        columnNumber: 8
-      }
-    }, __jsx("a", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 32,
-        columnNumber: 9
-      }
-    }, "Auth"))), __jsx("button", {
-      onClick: () => next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push('/auth'),
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 35,
-        columnNumber: 6
-      }
-    }, " Go To Auth"));
-  }
+    };
 
+    const params = {};
+    Object.keys(groups).forEach(slugName => {
+      const g = groups[slugName];
+      const m = routeMatch[g.pos];
+
+      if (m !== undefined) {
+        params[slugName] = ~m.indexOf('/') ? m.split('/').map(entry => decode(entry)) : g.repeat ? [decode(m)] : decode(m);
+      }
+    });
+    return params;
+  };
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (IndexPage);
+exports.getRouteMatcher = getRouteMatcher;
 
 /***/ }),
 
-/***/ 3:
-/*!******************************!*\
-  !*** multi ./pages/index.js ***!
-  \******************************/
-/*! no static exports found */
+/***/ "kYf9":
+/***/ (function(module, exports) {
+
+module.exports = require("next/dist/next-server/lib/utils.js");
+
+/***/ }),
+
+/***/ "nOHt":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/falguni/Documents/NextJS/pages/index.js */"./pages/index.js");
+"use strict";
 
 
-/***/ }),
+var _interopRequireWildcard = __webpack_require__("284h");
 
-/***/ "next/router":
-/*!******************************!*\
-  !*** external "next/router" ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+var _interopRequireDefault = __webpack_require__("TqRt");
 
-module.exports = require("next/router");
+exports.__esModule = true;
+exports.useRouter = useRouter;
+exports.makePublicRouterInstance = makePublicRouterInstance;
+exports.createRouter = exports.withRouter = exports.default = void 0;
 
-/***/ }),
+var _react = _interopRequireDefault(__webpack_require__("cDcd"));
 
-/***/ "prop-types":
-/*!*****************************!*\
-  !*** external "prop-types" ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+var _router2 = _interopRequireWildcard(__webpack_require__("elyg"));
 
-module.exports = require("prop-types");
+exports.Router = _router2.default;
+exports.NextRouter = _router2.NextRouter;
 
-/***/ }),
+var _routerContext = __webpack_require__("Osoz");
 
-/***/ "prop-types-exact":
-/*!***********************************!*\
-  !*** external "prop-types-exact" ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+var _withRouter = _interopRequireDefault(__webpack_require__("0Bsm"));
 
-module.exports = require("prop-types-exact");
+exports.withRouter = _withRouter.default;
+/* global window */
 
-/***/ }),
+var singletonRouter = {
+  router: null,
+  // holds the actual router instance
+  readyCallbacks: [],
 
-/***/ "react":
-/*!************************!*\
-  !*** external "react" ***!
-  \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+  ready(cb) {
+    if (this.router) return cb();
 
-module.exports = require("react");
+    if (false) {}
+  }
 
-/***/ }),
+}; // Create public properties and methods of the router in the singletonRouter
 
-/***/ "react-is":
-/*!***************************!*\
-  !*** external "react-is" ***!
-  \***************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+var urlPropertyFields = ['pathname', 'route', 'query', 'asPath', 'components', 'isFallback', 'basePath'];
+var routerEvents = ['routeChangeStart', 'beforeHistoryChange', 'routeChangeComplete', 'routeChangeError', 'hashChangeStart', 'hashChangeComplete'];
+var coreMethodFields = ['push', 'replace', 'reload', 'back', 'prefetch', 'beforePopState']; // Events is a static property on the router, the router doesn't have to be initialized to use it
 
-module.exports = require("react-is");
+Object.defineProperty(singletonRouter, 'events', {
+  get() {
+    return _router2.default.events;
+  }
 
-/***/ }),
+});
+urlPropertyFields.forEach(field => {
+  // Here we need to use Object.defineProperty because, we need to return
+  // the property assigned to the actual router
+  // The value might get changed as we change routes and this is the
+  // proper way to access it
+  Object.defineProperty(singletonRouter, field, {
+    get() {
+      var router = getRouter();
+      return router[field];
+    }
 
-/***/ "url":
-/*!**********************!*\
-  !*** external "url" ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+  });
+});
+coreMethodFields.forEach(field => {
+  // We don't really know the types here, so we add them later instead
+  ;
 
-module.exports = require("url");
+  singletonRouter[field] = function () {
+    var router = getRouter();
+    return router[field](...arguments);
+  };
+});
+routerEvents.forEach(event => {
+  singletonRouter.ready(() => {
+    _router2.default.events.on(event, function () {
+      var eventField = "on" + event.charAt(0).toUpperCase() + event.substring(1);
+      var _singletonRouter = singletonRouter;
+
+      if (_singletonRouter[eventField]) {
+        try {
+          _singletonRouter[eventField](...arguments);
+        } catch (err) {
+          // tslint:disable-next-line:no-console
+          console.error("Error when running the Router event: " + eventField); // tslint:disable-next-line:no-console
+
+          console.error(err.message + "\n" + err.stack);
+        }
+      }
+    });
+  });
+});
+
+function getRouter() {
+  if (!singletonRouter.router) {
+    var message = 'No router instance found.\n' + 'You should only use "next/router" inside the client side of your app.\n';
+    throw new Error(message);
+  }
+
+  return singletonRouter.router;
+} // Export the singletonRouter and this is the public API.
+
+
+var _default = singletonRouter; // Reexport the withRoute HOC
+
+exports.default = _default;
+
+function useRouter() {
+  return _react.default.useContext(_routerContext.RouterContext);
+} // INTERNAL APIS
+// -------------
+// (do not use following exports inside the app)
+// Create a router and assign it as the singleton instance.
+// This is used in client side when we are initilizing the app.
+// This should **not** use inside the server.
+
+
+var createRouter = function createRouter() {
+  for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+
+  singletonRouter.router = new _router2.default(...args);
+  singletonRouter.readyCallbacks.forEach(cb => cb());
+  singletonRouter.readyCallbacks = [];
+  return singletonRouter.router;
+}; // This function is used to create the `withRouter` router instance
+
+
+exports.createRouter = createRouter;
+
+function makePublicRouterInstance(router) {
+  var _router = router;
+  var instance = {};
+
+  for (var property of urlPropertyFields) {
+    if (typeof _router[property] === 'object') {
+      instance[property] = Object.assign({}, _router[property]); // makes sure query is not stateful
+
+      continue;
+    }
+
+    instance[property] = _router[property];
+  } // Events is a static property on the router, the router doesn't have to be initialized to use it
+
+
+  instance.events = _router2.default.events;
+  coreMethodFields.forEach(field => {
+    instance[field] = function () {
+      return _router[field](...arguments);
+    };
+  });
+  return instance;
+}
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=index.js.map

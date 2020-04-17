@@ -34,3 +34,14 @@
     - 
 
 ```
+
+
+### Deploying My App :
+
+```
+   - Run this : npm run build ;
+   - run : npm start ;
+   - deploy in : Firebase / heroku /AWS ;
+
+
+```
