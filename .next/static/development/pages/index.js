@@ -4587,7 +4587,7 @@ var IndexPage = /*#__PURE__*/function (_Component) {
     key: "getInitialProps",
     // static async getInitialProps(context) {
     value: function getInitialProps(context) {
-      console.log(context);
+      // console.log(context);
       var promise = new Promise(function (resolve, reject) {
         setTimeout(function () {
           resolve({

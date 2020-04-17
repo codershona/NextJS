@@ -6,7 +6,7 @@ import Router from 'next/router';
 class IndexPage extends Component {
 	// static async getInitialProps(context) {
 		static getInitialProps(context) {
-		console.log(context);
+		// console.log(context);
 		  const promise = new Promise((resolve, reject) => {
 		  	 setTimeout(() => {
 		  	 	resolve({appName: 'Super App'});
