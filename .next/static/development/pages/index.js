@@ -4594,8 +4594,9 @@ var IndexPage = /*#__PURE__*/function (_Component) {
           switch (_context.prev = _context.next) {
             case 0:
               console.log(context);
+              return _context.abrupt("return", {});
 
-            case 1:
+            case 2:
             case "end":
               return _context.stop();
           }

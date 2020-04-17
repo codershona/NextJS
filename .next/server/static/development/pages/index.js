@@ -1808,6 +1808,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 class IndexPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   static async getInitialProps(context) {
     console.log(context);
+    return {};
   }
 
   render() {
