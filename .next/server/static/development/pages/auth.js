@@ -161,7 +161,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const authIndexPage = () => __jsx("div", {
+const authIndexPage = props => __jsx("div", {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,

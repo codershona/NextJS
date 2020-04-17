@@ -996,7 +996,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-var authIndexPage = function authIndexPage() {
+var authIndexPage = function authIndexPage(props) {
   return __jsx("div", {
     __self: _this,
     __source: {

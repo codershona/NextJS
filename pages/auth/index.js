@@ -1,7 +1,7 @@
 import React from 'react';
 import User from '../../components/User';
 
-const authIndexPage = () => (
+const authIndexPage = (props) => (
      <div>
        <h1>The Auth Index Main Page - {props.appName}</h1>
        <User name="Lissa" age={24} />
